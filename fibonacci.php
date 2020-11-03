@@ -3,14 +3,11 @@
 function fibonacciDisplay($max){
     
     // if and else if to generate first two numbers
-    if ($max == 0)
+    if ($max < 2)
     {
-        return 0;
+        return $max;
     }
-   else if ($max == 1)
-   {
-     return 1;
-   }
+  
    else
        
      return (fibonacciDisplay($max-1) + fibonacciDisplay($max-2));
