@@ -23,19 +23,18 @@
     
     
 }*/
-function addAll($Array, $totalCount)
+function addAll($totalCount)
 {
-    unset($Array[$totalCount]);
+    
     if ($totalCount <= 0)
         return 0;
     else
-        
-        return (addAll($Array, $totalCount - 1) + $totalCount);
+       return (addAll($totalCount - 1) + $totalCount);
 }
 
 // Driver code
 $Array  = array(1,1,1,1,1);
 $totalCount= sizeof($Array);
-echo "Result => ".addAll($Array , $totalCount);
+echo "Result => ".addAll($totalCount);
 
 ?>
