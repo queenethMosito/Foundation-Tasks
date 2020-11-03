@@ -1,5 +1,5 @@
 <?php
-function addAll($Array) {
+/*function addAll($Array) {
     $sum = 0;
     //loop through array
     $sumDisplay = '' ;
@@ -22,8 +22,20 @@ function addAll($Array) {
     return $sum . ' => ' . $sumDisplay;
     
     
+}*/
+function addAll($Array, $totalCount)
+{
+    unset($Array[$totalCount]);
+    if ($totalCount <= 0)
+        return 0;
+    else
+        
+        return (addAll($Array, $totalCount - 1) + $totalCount);
 }
 
-$Array = [1,1,1,1,1]; //5+4+3+2+1=15
-echo addAll($Array);
+// Driver code
+$Array  = array(1,1,1,1,1);
+$totalCount= sizeof($Array);
+echo "Result => ".addAll($Array , $totalCount);
+
 ?>
